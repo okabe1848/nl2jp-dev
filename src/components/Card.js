@@ -54,6 +54,12 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `
 
+
+const Excerpt2 = styled.div`
+  margin: 0 1rem 1rem 1rem;
+  line-height: 1.6;
+`
+
 const StyledImg = styled(Img)`
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
@@ -68,11 +74,13 @@ const Card = ({ slug, featured_media, title, date, excerpt, ...props }) => {
         {featured_media ? <StyledImg fluid={featured_media.localFile.childImageSharp.fluid} backgroundColor={'#eeeeee'} /> : ""}
         <Title>{title}</Title>
         <Date>{date}</Date>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: extract(excerpt),
-          }}
-        ></div>
+        <Excerpt2>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: extract(excerpt),
+            }}
+          ></div>
+        </Excerpt2>
         <Excerpt
           dangerouslySetInnerHTML={{
             __html: extract(excerpt),
