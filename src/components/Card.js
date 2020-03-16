@@ -59,6 +59,8 @@ const StyledImg = styled(Img)`
   border-top-right-radius: 1px;
 `
 
+const extract = (excerpt) => `${ excerpt.substring(0, 70)}...`;
+
 const Card = ({ slug, featured_media, title, date, excerpt, ...props }) => {
   return (
     <Post featured={props.featured}>
@@ -68,7 +70,7 @@ const Card = ({ slug, featured_media, title, date, excerpt, ...props }) => {
         <Date>{date}</Date>
         <Excerpt
           dangerouslySetInnerHTML={{
-            __html: excerpt.substring(0, 70) + "...",
+            __html: extract(excerpt),
           }}
         />
       </Link>
