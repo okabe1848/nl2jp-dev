@@ -38,26 +38,27 @@ const Post = styled.li`
 `
 
 const Title = styled.h2`
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 100;
   text-transform: capitalize;
-  margin: 1rem 1rem 0.5rem 1rem;
+  margin: 0.8rem 0.8rem 0.5rem 0.8rem;
 `
 
 const Date = styled.h3`
-  margin: 0 1rem 1.5rem 1rem;
+  margin: 0 1rem 1rem 1rem;
   color: gray;
 `
 
-const Excerpt = styled.p`
-  margin: 0 1rem 1rem 1rem;
-  line-height: 1.6;
-`
+// const Excerpt = styled.p`
+//   margin: 0 1rem 1rem 1rem;
+//   line-height: 1.6;
+// `
 
 
-const Excerpt2 = styled.div`
-  margin: 0 1rem 1rem 1rem;
-  line-height: 1.6;
+const Excerpt = styled.div`
+  margin: 0 0.8rem 0.5rem 0.8rem;
+  line-height: 1.5;
+  font-size: 0.9em;
 `
 
 const StyledImg = styled(Img)`
@@ -71,21 +72,17 @@ const Card = ({ slug, featured_media, title, date, excerpt, ...props }) => {
   return (
     <Post featured={props.featured}>
       <Link to={`/${slug}/`}>
-        {featured_media ? <StyledImg fluid={featured_media.localFile.childImageSharp.fluid} backgroundColor={'#eeeeee'} /> : ""}
+        {featured_media ? <StyledImg fluid={featured_media.localFile.childImageSharp.fluid} backgroundColor={'#eeeeee'} /> :
+        <img src="http://placehold.jp/24/f3f3f3/696969/300x190.png?text=Keep Reading" />}
         <Title>{title}</Title>
         <Date>{date}</Date>
-        <Excerpt2>
+        <Excerpt>
           <div
             dangerouslySetInnerHTML={{
               __html: extract(excerpt),
             }}
           ></div>
-        </Excerpt2>
-        <Excerpt
-          dangerouslySetInnerHTML={{
-            __html: extract(excerpt),
-          }}
-        />
+        </Excerpt>
       </Link>
     </Post>
   )

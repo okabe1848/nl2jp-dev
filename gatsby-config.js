@@ -1,6 +1,5 @@
 const config = require('./src/config/siteConfig')
 
-
 module.exports = {
   siteMetadata: {
     siteUrl: config.siteUrl,
@@ -46,7 +45,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     {
       // Removes unused css rules
-      resolve:'gatsby-plugin-purgecss',
+      resolve: 'gatsby-plugin-purgecss',
       options: {
         // Activates purging in gatsby develop
         develop: true,
