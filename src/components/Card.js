@@ -68,6 +68,7 @@ const Card = ({ slug, featured_media, title, date, excerpt, ...props }) => {
         {featured_media ? <StyledImg fluid={featured_media.localFile.childImageSharp.fluid} backgroundColor={'#eeeeee'} /> : ""}
         <Title>{title}</Title>
         <Date>{date}</Date>
+        <div>{extract("aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. aaaaaaaaaa. ")}</div>
         <Excerpt
           dangerouslySetInnerHTML={{
             __html: extract(excerpt),
